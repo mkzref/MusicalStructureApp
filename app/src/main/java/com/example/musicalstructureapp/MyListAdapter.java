@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -19,7 +17,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     private Context mcontext;
     private List<MyList> listdata;
 
-    // RecyclerView recyclerView;
+
     public MyListAdapter(Context mcontext , List<MyList> listdata) {
         this.mcontext = mcontext;
         this.listdata = listdata;
@@ -43,7 +41,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mcontext, PlayingNow.class);//when click on any user
+                Intent intent = new Intent(mcontext, PlayingNow.class);
                 intent.putExtra("song_name",myListData.getsongName());
                 intent.putExtra("band_name",myListData.getArtistName());
                 mcontext.startActivity(intent);            }
