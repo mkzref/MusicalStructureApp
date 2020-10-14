@@ -12,7 +12,6 @@ public class MyList {
         this.ArtistName = ArtistName;
         this.imag = imag;
     }
-
     public String getsongName() {
         return songName;
     }

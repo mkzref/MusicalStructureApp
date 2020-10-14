@@ -14,8 +14,8 @@ public class PlayingNow extends AppCompatActivity {
     String songName;
     String bandName;
     SeekBar bar;
-     MediaPlayer song;
-     ImageButton imagebutton;
+    MediaPlayer song;
+    ImageButton imagebutton;
     private double startTime = 0;
     private double finalTime = 0;
 
@@ -29,7 +29,7 @@ public class PlayingNow extends AppCompatActivity {
         TextView songTextView = (TextView) findViewById(R.id.song_name);
         TextView bandTextView = (TextView) findViewById(R.id.band_name);
         bar = findViewById(R.id.simpleSeekBar);
-        imagebutton=findViewById(R.id.play_pause);
+        imagebutton = findViewById(R.id.play_pause);
         songTextView.setText(songName);
         bandTextView.setText(bandName);
         song = MediaPlayer.create(this, R.raw.applause);
@@ -37,13 +37,12 @@ public class PlayingNow extends AppCompatActivity {
         imagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText( getApplicationContext(), "Playing sound",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Playing sound", Toast.LENGTH_SHORT).show();
                 song.start();
                 finalTime = song.getDuration();
                 startTime = song.getCurrentPosition();
-                bar.setProgress((int)startTime);
+                bar.setProgress((int) startTime);
                 bar.setMax((int) finalTime);
-
 
             }
         });

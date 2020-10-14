@@ -14,7 +14,7 @@
             android:label="Playing Now"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity"
-            android:label="List of music"
+            android:label="Album"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

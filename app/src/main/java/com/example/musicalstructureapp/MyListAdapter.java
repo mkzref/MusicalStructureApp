@@ -8,29 +8,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
-public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
+public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder> {
     private Context mcontext;
     private List<MyList> listdata;
 
 
-    public MyListAdapter(Context mcontext , List<MyList> listdata) {
+    public MyListAdapter(Context mcontext, List<MyList> listdata) {
         this.mcontext = mcontext;
         this.listdata = listdata;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_item, parent, false);
+        View listItem = layoutInflater.inflate(R.layout.list_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
-
-
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
@@ -42,12 +39,12 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mcontext, PlayingNow.class);
-                intent.putExtra("song_name",myListData.getsongName());
-                intent.putExtra("band_name",myListData.getArtistName());
-                mcontext.startActivity(intent);            }
+                intent.putExtra("song_name", myListData.getsongName());
+                intent.putExtra("band_name", myListData.getArtistName());
+                mcontext.startActivity(intent);
+            }
         });
     }
-
 
     @Override
     public int getItemCount() {
@@ -59,9 +56,10 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public TextView nameartist;
         public ImageView img;
         public RelativeLayout relativeLayout;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            this.img= itemView.findViewById(R.id.imageView);
+            this.img = itemView.findViewById(R.id.imageView);
             this.namesong = itemView.findViewById(R.id.songname);
             this.nameartist = itemView.findViewById(R.id.artistname);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
