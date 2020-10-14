@@ -61,10 +61,10 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.img=(ImageView) itemView.findViewById(R.id.imageView);
-            this.namesong = (TextView) itemView.findViewById(R.id.textView2);
-            this.nameartist = (TextView) itemView.findViewById(R.id.textView);
-            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
+            this.img= itemView.findViewById(R.id.imageView);
+            this.namesong = itemView.findViewById(R.id.songname);
+            this.nameartist = itemView.findViewById(R.id.artistname);
+            relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }
     }
 }

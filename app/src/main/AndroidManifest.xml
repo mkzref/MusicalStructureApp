@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PlayingNow"
-            android:screenOrientation="sensor"></activity>
+            android:screenOrientation="sensor"
+            android:label="Playing Now"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity"
+            android:label="List of music"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
