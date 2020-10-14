@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Musical Structure App</string>
+    <string name="song1">Everlong</string>
+    <string name="band1">Foo Fighters</string>
+    <string name="song2">Temple Of Love</string>
+    <string name="band2">Sisters Of Mercy</string>
+    <string name="song3">Raf</string>
+    <string name="song4">Baba</string>
+    <string name="song5">Hey Hey My My</string>
+    <string name="song6">Jigsaw Falling Into Place</string>
+    <string name="song7">Street Spirit</string>
+    <string name="song8">Transmission</string>
+    <string name="song9">Lake Of Fire</string>
+    <string name="song10">Rearviewmirror</string>
+    <string name="band3">Deeprise</string>
+    <string name="band4">Erkut Tackin</string>
+    <string name="band5">Neil Young</string>
+    <string name="band6">Radiohead</string>
+    <string name="band7">Radiohead</string>
+    <string name="band8">Joy Division</string>
+    <string name="band9">Nirvana</string>
+    <string name="band10">Pearl Jam</string>
+</resources>
