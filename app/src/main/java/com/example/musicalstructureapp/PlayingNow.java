@@ -49,7 +49,7 @@ public class PlayingNow extends AppCompatActivity {
         imagebutton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                imagebutton.setImageResource(R.drawable.ic_baseline_pause_24);
+                imagebutton.setImageResource(R.drawable.ic_action_playback_pause);
                 song.pause();
                 return false;
             }
