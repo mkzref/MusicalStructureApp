@@ -17,10 +17,8 @@ public class PlayingNow extends AppCompatActivity {
     SeekBar bar;
     MediaPlayer song;
     ImageButton imagebutton;
-    private double startTime = 0;
-    private double finalTime = 0;
     Handler seekHandler = new Handler();
-
+    Runnable runnable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,30 +32,35 @@ public class PlayingNow extends AppCompatActivity {
         imagebutton = findViewById(R.id.play_pause);
         songTextView.setText(songName);
         bandTextView.setText(bandName);
-        song = MediaPlayer.create(this, R.raw.applause);
+        song = MediaPlayer.create(this, R.raw.nolove);
         bar.setClickable(false);
+          runnable = new Runnable() {
+            @Override
+            public void run() {
+                bar.setProgress(song.getCurrentPosition());
+                seekHandler.postDelayed(runnable , 1000);
+            }
+
+        };
+
+
+
         imagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Playing sound", Toast.LENGTH_SHORT).show();
 
-                bar.setMax(song.getDuration());
+
                 song.start();
-                seekUpdation();
+                bar.setMax(song.getDuration());
+                seekHandler.postDelayed(runnable , 0);
+                imagebutton.setImageResource(R.drawable.ic_action_playback_pause);
 
             }
         });
 
 
-    }
-    Runnable run = new Runnable() {
-        @Override
-        public void run() {
-            seekUpdation();
-        }
-    };
-    public void seekUpdation() {
-        bar.setProgress(song.getCurrentPosition());
-        seekHandler.postDelayed(run, 1000);
-    }
+}
+
+
 }
